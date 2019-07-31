@@ -17,7 +17,7 @@ export function triggerCharacter(char, { allowSpaces = false }) {
     const suffix = new RegExp(`\\s${char}$`);
     const regexp = allowSpaces
       ? new RegExp(`${char}.*?(?=\\s${char}|$)`, 'g')
-      : new RegExp(`(?:^)?${char}[^\\s${char}]*`, 'g');
+      : new RegExp(`${char}[^\\s${char}]*`, 'g');
 
     // Lookup the boundaries of the current node
     const textFrom = $position.before();
